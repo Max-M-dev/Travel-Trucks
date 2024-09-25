@@ -12,7 +12,6 @@ const CamperPage = lazy(() => import('../../pages/CamperPage/CamperPage.jsx'));
 const NotFoundPage = lazy(() => import('../../pages/NotFoundPage/NotFoundPage.jsx'));
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <>

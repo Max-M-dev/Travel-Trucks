@@ -1,0 +1,32 @@
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #f2f4f7;
+    padding: 0 64px;
+    width: 1440px;
+    background: #f7f7f7;
+    margin: 0 auto 48px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+    width: 138px;
+}
+
+.link {
+    padding: 24px 0;
+
+    font-weight: 500;
+    text-align: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover,
+.link:active {
+    color: #d84343;
+}
