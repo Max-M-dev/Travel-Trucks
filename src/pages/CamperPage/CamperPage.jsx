@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 import BookForm from '../../components/BookForm/BookForm';
 import { fetchCampersById } from '../../redux/Vehicles/operations';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useEffect, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectError, selectIsLoading } from '../../redux/vehicles/selectors';
 import { selectCamperById } from '../../redux/vehicles/selectors';
@@ -110,7 +110,7 @@ const CamperPage = () => {
             </div>
             <div className={css.bottom}>
                 <Suspense fallback={<div>Loading...</div>}>
-                    <Outlet />
+                    <Outlet context={{ camper }} />
                 </Suspense>
                 <BookForm />
             </div>

@@ -1,93 +1,40 @@
 
 import css from './Reviews.module.css'
 
+import { useOutletContext } from 'react-router-dom';
+
+import Stars from '../Stars/Stars';
+
 const Reviews = () => {
+
+    const { camper } = useOutletContext();
+
     return (
         <div className={css.container}>
             <div className={css.wrapper}>
-                <div>
-                    <div></div>
+                <div className={css.div}>
+                    <div className={css.letter}>{camper.reviews[0].reviewer_name.charAt(0).toUpperCase()}</div>
                     <div className={css.top}>
-                        <p className={css.name}>Alice</p>
-                        <ul className={css.stars}>
-                            <li>
-                                <svg width="16" height="16" className={css.star}>
-                                    <use href="/sprite.svg#icon-star" >
-                                    </use>
-                                </svg>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" className={css.star}>
-                                    <use href="/sprite.svg#icon-star" >
-                                    </use>
-                                </svg>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" className={css.star}>
-                                    <use href="/sprite.svg#icon-star" >
-                                    </use>
-                                </svg>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" className={css.star}>
-                                    <use href="/sprite.svg#icon-star" >
-                                    </use>
-                                </svg>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" className={css.star}>
-                                    <use href="/sprite.svg#icon-star" >
-                                    </use>
-                                </svg>
-                            </li>
-                        </ul>
+                        <p className={css.name}>{camper.reviews[0].reviewer_name}</p>
+                        <Stars rating={camper.reviews[0].reviewer_rating} />
                     </div>
                 </div>
                 <div>
-                    <p className={css.text}>The Mavericks panel truck was a perfect choice for my solo road trip. Compact, easy to drive, and had all the essentials. The kitchen facilities were sufficient, and the overall experience was fantastic.</p>
+                    <p className={css.text}>{camper.reviews[0].comment}</p>
                 </div>
             </div>
             <div className={css.wrapper}>
-                <div>
-                    <div></div>
+                <div className={css.div}>
+                    <div className={css.letter}>
+                        {camper.reviews[1].reviewer_name.charAt(0).toUpperCase()}
+                    </div>
                     <div className={css.top}>
-                        <p className={css.name}>Bob</p>
-                        <ul className={css.stars}>
-                            <li>
-                                <svg width="16" height="16" className={css.star}>
-                                    <use href="/sprite.svg#icon-star" >
-                                    </use>
-                                </svg>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" className={css.star}>
-                                    <use href="/sprite.svg#icon-star" >
-                                    </use>
-                                </svg>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" className={css.star}>
-                                    <use href="/sprite.svg#icon-star" >
-                                    </use>
-                                </svg>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" className={css.star}>
-                                    <use href="/sprite.svg#icon-star" >
-                                    </use>
-                                </svg>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" className={css.star}>
-                                    <use href="/sprite.svg#icon-star" >
-                                    </use>
-                                </svg>
-                            </li>
-                        </ul>
+                        <p className={css.name}>{camper.reviews[1].reviewer_name}</p>
+                        <Stars rating={camper.reviews[1].reviewer_rating} />
                     </div>
                 </div>
                 <div>
-                    <p className={css.text}>A decent option for solo travel. The Mavericks provided a comfortable stay, but the lack of bathroom facilities was a drawback. Good for short trips where simplicity is preferred.</p>
+                    <p className={css.text}>{camper.reviews[0].comment}</p>
                 </div>
             </div>
         </div>

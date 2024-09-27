@@ -5,7 +5,7 @@ import Filters from "../../components/Filters/Filters"
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCampers } from "../../redux/Vehicles/operations";
-import { selectError, selectIsLoading } from '../../redux/vehicles/selectors.js';
+import { selectError, selectIsLoading, selectFilteredCampers } from '../../redux/vehicles/selectors.js';
 
 import css from './CatalogPage.module.css';
 
@@ -15,10 +15,16 @@ const CatalogPage = () => {
 
     const error = useSelector(selectError);
     const isLoading = useSelector(selectIsLoading);
+    const campers = useSelector(selectFilteredCampers);
 
     useEffect(() => {
-        dispatch(fetchCampers());
+        dispatch(fetchCampers({ page: 1, limit: 5 }));
     }, [dispatch]);
+
+    const handleLoadMore = () => {
+        const nextPage = Math.ceil(campers.length / 5) + 1;
+        dispatch(fetchCampers({ page: nextPage, limit: 5 }));
+    };
 
     return (
         <main className={css.container}>
@@ -26,6 +32,7 @@ const CatalogPage = () => {
             {error && <p>{error}</p>}
             <Filters />
             <CatalogList />
+            <button className={css.more} type="button" onClick={handleLoadMore}>Load more</button>
         </main>
     )
 }

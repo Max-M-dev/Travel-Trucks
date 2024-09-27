@@ -1,0 +1,11 @@
+
+.stars {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px;
+}
+
+.star {
+    fill: #f2f4f7;
+}

@@ -5,9 +5,9 @@ import { toast } from 'react-hot-toast';
 
 axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/";
 
-export const fetchCampers = createAsyncThunk("/campers/fetchAll", async (_, thunkAPI) => {
+export const fetchCampers = createAsyncThunk("/campers/fetchAll", async ({ page = 1, limit = 5 }, thunkAPI) => {
     try {
-        const response = await axios.get("/campers");
+        const response = await axios.get(`/campers?page=${page}&limit=${limit}`);
         return response.data.items;
     } catch (e) {
         return thunkAPI.rejectWithValue(e.message) && toast.error('Something went wrong :( Try to reload your page.');
