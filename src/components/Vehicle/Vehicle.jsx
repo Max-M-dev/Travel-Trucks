@@ -63,7 +63,7 @@ const Vehicle = () => {
                                     <use href="/sprite.svg#icon-wind" >
                                     </use>
                                 </svg>
-                                AC
+                                Radio
                             </li>
                         </ul>
                     </div>

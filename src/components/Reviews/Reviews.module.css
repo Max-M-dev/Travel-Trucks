@@ -1,0 +1,44 @@
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 631px;
+    margin: 12px 40px 80px 194px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 44px;
+}
+
+.top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stars {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px;
+}
+
+.star {
+    fill: #ffc531;;
+}
+
+.text {
+    color: #475467;
+}
+
+.name {
+    font-weight: 500;
+}
