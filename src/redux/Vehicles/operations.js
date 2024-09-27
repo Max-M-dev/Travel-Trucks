@@ -5,10 +5,10 @@ import { toast } from 'react-hot-toast';
 
 axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/";
 
-export const fetchCampers = createAsyncThunk("/campers", async (_, thunkAPI) => {
+export const fetchCampers = createAsyncThunk("/campers/fetchAll", async (_, thunkAPI) => {
     try {
-        const response = await axios.get("/campers/fetchAll");
-        return response.data.data;
+        const response = await axios.get("/campers");
+        return response.data.items;
     } catch (e) {
         return thunkAPI.rejectWithValue(e.message) && toast.error('Something went wrong :( Try to reload your page.');
     }
@@ -23,18 +23,3 @@ export const fetchCampersById = createAsyncThunk("/campers/fetchById", async (id
     }
 });
 
-
-
-
-// export const patchContact = createAsyncThunk(
-//     "contacts/patchContact",
-//     async ({ _id, name, number }, thunkAPI) => {
-//         try {
-//             const response = await axios.patch(`/contacts/${_id}`, { name, number });
-//             thunkAPI.dispatch(fetchContacts());
-//             return response.data && toast.success('A contact was successfully changed!');
-//         } catch (e) {
-//             return thunkAPI.rejectWithValue(e.message);
-//         }
-//     }
-// );

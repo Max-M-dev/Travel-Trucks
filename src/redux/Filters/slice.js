@@ -5,10 +5,10 @@ const filtersInitialState = {
     name: '',
     location: '',
     form: '',
-    ac: '',
+    AC: '',
     transmission: '',
     kitchen: '',
-    tv: '',
+    TV: '',
     bathroom: '',
 };
 
@@ -20,10 +20,10 @@ const filtersSlice = createSlice({
             state.name = action.payload;
             state.location = action.payload;
             state.form = action.payload;
-            state.ac = action.payload;
+            state.AC = action.payload;
             state.transmission = action.payload;
             state.kitchen = action.payload;
-            state.tv = action.payload;
+            state.TV = action.payload;
             state.bathroom = action.payload;
         },
     },

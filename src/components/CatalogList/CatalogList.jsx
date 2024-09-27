@@ -1,22 +1,29 @@
 
 import Vehicle from "../Vehicle/Vehicle"
 
+import { useSelector } from "react-redux";
+import { selectFilteredCampers } from "../../redux/vehicles/selectors.js";
+
 import css from './CatalogList.module.css'
 
 const CatalogList = () => {
+
+    const campers = useSelector(selectFilteredCampers);
+
+    console.log(campers);
+
     return (
         <div>
-            <Vehicle />
-            {/* {events.length === 0 ? (
-                <p>No events found</p>
+            {campers.length === 0 ? (
+                <p>No campers found</p>
             ) : (
                 <ul>
-                    {events.map(event => (
-                        <li key={event._id}>
-                            <Event event={event} />
+                    {campers.map(camper => (
+                        <li key={camper.id}>
+                            <Vehicle camper={camper} />
                         </li>
                     ))}
-                </ul>)} */}
+                </ul>)}
             <button className={css.more} type="button">Load more</button>
         </div>
     )

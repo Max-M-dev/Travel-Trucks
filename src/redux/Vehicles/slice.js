@@ -35,9 +35,13 @@ const campersSlice = createSlice({
                 state.isLoading = false;
                 state.error = null;
 
-                state.items = state.items.filter(
-                    item => item.id = action.payload.id
-                );
+                const camperIndex = state.items.findIndex(item => item.id === action.payload.id);
+
+                if (camperIndex !== -1) {
+                    state.items[camperIndex] = action.payload;
+                } else {
+                    state.items.push(action.payload);
+                }
             })
             .addCase(fetchCampersById.rejected, handleRejected);
     },

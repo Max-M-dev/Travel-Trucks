@@ -2,22 +2,25 @@
 .container {
     position: relative;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 24px;
     border: 1px solid #dadde1;
     border-radius: 20px;
     padding: 24px;
     width: 888px;
-    height: 368px;
     background: #fff;
+    margin-bottom: 32px;
 }
 
 .wrapper {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+}
+
+.box {
+    height: 320px;
+}
+
+.div {
+    height: 32px;
+    margin-bottom: 8px;
 }
 
 .img {
@@ -25,14 +28,14 @@
     width: 292px;
     height: 320px;
     margin-right: 24px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .top {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 248px;
-    margin-bottom: 8px;
+    justify-content: space-between;
+    width: 486px;
 }
 
 .like {
@@ -54,8 +57,6 @@
 
 .middle {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
     gap: 16px;
     margin-bottom: 24px;
 }
@@ -73,7 +74,10 @@
 
 .text {
     color: #475467;
+    width: 524px;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     margin-bottom: 24px;
 }
 
@@ -90,6 +94,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    height: 104px;
+    overflow: hidden;
 }
 
 .item {
@@ -109,12 +115,10 @@
 
 .btn {
     display: flex;
-    align-items: center;
     justify-content: center;
     border-radius: 200px;
     padding: 16px 40px;
     width: 166px;
-    height: 56px;
     background: #e44848;
 
     font-weight: 500;
