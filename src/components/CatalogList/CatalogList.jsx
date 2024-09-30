@@ -2,7 +2,7 @@
 import Vehicle from "../Vehicle/Vehicle"
 
 import { useSelector } from "react-redux";
-import { selectFilteredCampers } from "../../redux/vehicles/selectors.js";
+import { selectFilteredCampers } from "../../redux/campers/selectors.js";
 
 // import css from './CatalogList.module.css'
 

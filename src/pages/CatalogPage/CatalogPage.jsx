@@ -4,8 +4,8 @@ import Filters from "../../components/Filters/Filters"
 
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCampers } from "../../redux/Vehicles/operations";
-import { selectError, selectIsLoading, selectFilteredCampers } from '../../redux/vehicles/selectors.js';
+import { fetchCampers } from "../../redux/campers/operations.js";
+import { selectError, selectIsLoading, selectFilteredCampers } from '../../redux/campers/selectors.js';
 
 import css from './CatalogPage.module.css';
 
