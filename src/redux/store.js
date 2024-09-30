@@ -11,7 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { campersReducer } from "./campers/slice";
-import { favouritesReducer } from "./favourite/slice";
+import { favouritesReducer } from "./favourites/slice";
 import { filtersReducer } from "./filters/slice";
 
 const vehiclesPersistConfig = {
