@@ -1,16 +1,14 @@
 
 import css from './CamperPage.module.css'
 
-import { useNavigate, useLocation, useParams, Outlet } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import { useNavigate, useLocation, useParams, Outlet, NavLink } from 'react-router-dom';
 
 import BookForm from '../../components/BookForm/BookForm';
-import { fetchCampersById } from '../../redux/Vehicles/operations';
+import { fetchCampersById } from '../../redux/campers/operations.js';
 
 import { useEffect, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectError, selectIsLoading } from '../../redux/vehicles/selectors';
-import { selectCamperById } from '../../redux/vehicles/selectors';
+import { selectCamperById, selectError, selectIsLoading } from '../../redux/campers/selectors.js';
 
 
 const CamperPage = () => {

@@ -1,11 +1,11 @@
-import { selectNameFilter } from "../filter/selectors";
-import { selectLocationFilter } from '../filter/selectors';
-import { selectFormFilter } from "../filter/selectors";
-import { selectACFilter } from "../filter/selectors";
-import { selectTransmissionFilter } from "../filter/selectors";
-import { selectKitchenFilter } from "../filter/selectors";
-import { selectTVFilter } from "../filter/selectors";
-import { selectBathroomFilter } from "../filter/selectors";
+import { selectNameFilter } from "../filters/selectors";
+import { selectLocationFilter } from '../filters/selectors';
+import { selectFormFilter } from "../filters/selectors";
+import { selectACFilter } from "../filters/selectors";
+import { selectTransmissionFilter } from "../filters/selectors";
+import { selectKitchenFilter } from "../filters/selectors";
+import { selectTVFilter } from "../filters/selectors";
+import { selectBathroomFilter } from "../filters/selectors";
 
 import { createSelector } from "@reduxjs/toolkit";
 
