@@ -8,8 +8,8 @@
 }
 
 .container {
-    background-image: url('/images/hero.jpg');
-    background-image: url('../../../public/images/hero.jpg');
+    background-color: darkgray;
+    background-image: url('/images/dream.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
