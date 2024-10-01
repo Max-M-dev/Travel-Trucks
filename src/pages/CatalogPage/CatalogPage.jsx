@@ -2,10 +2,10 @@
 import CatalogList from "../../components/CatalogList/CatalogList"
 import Filters from "../../components/Filters/Filters"
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCampers } from "../../redux/campers/operations.js";
-import { selectError, selectIsLoading, selectFilteredCampers } from '../../redux/campers/selectors.js';
+import { selectError, selectIsLoading } from '../../redux/campers/selectors.js';
 
 import css from './CatalogPage.module.css';
 
@@ -15,16 +15,18 @@ const CatalogPage = () => {
 
     const error = useSelector(selectError);
     const isLoading = useSelector(selectIsLoading);
-    const campers = useSelector(selectFilteredCampers);
+
+    const [page, setPage] = useState(1);
+    const limit = 5;
 
     useEffect(() => {
-        dispatch(fetchCampers({ page: 1, limit: 5 }));
-    }, [dispatch]);
+        dispatch(fetchCampers({ page, limit }));
+    }, [dispatch, page]);
 
     const handleLoadMore = () => {
-        const nextPage = Math.ceil(campers.length / 5) + 1;
-        dispatch(fetchCampers({ page: nextPage, limit: 5 }));
+        setPage(prevPage => prevPage + 1);
     };
+
 
     return (
         <main className={css.container}>

@@ -7,22 +7,19 @@ import 'modern-normalize';
 
 import { HelmetProvider } from 'react-helmet-async';
 import 'modern-normalize';
-import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter } from 'react-router-dom';
-import { persistor, store } from './redux/store';
+import { store } from './redux/store';
 
 import { Provider } from 'react-redux';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter>
-          <HelmetProvider>
-            <App />
-          </HelmetProvider>
-        </BrowserRouter>
-      </PersistGate>
+      <BrowserRouter>
+        <HelmetProvider>
+          <App />
+        </HelmetProvider>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
 )

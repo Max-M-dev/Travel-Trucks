@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
     persistStore,
-    persistReducer,
     FLUSH,
     REHYDRATE,
     PAUSE,
@@ -9,21 +8,15 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+// import storage from 'redux-persist/lib/storage';
 import { campersReducer } from "./campers/slice";
 import { favouritesReducer } from "./favourites/slice";
 import { filtersReducer } from "./filters/slice";
 
-const vehiclesPersistConfig = {
-    key: 'vehicles',
-    storage,
-    // whitelist: ['accessToken'],
-};
-
 
 export const store = configureStore({
     reducer: {
-        vehicles: persistReducer(vehiclesPersistConfig, campersReducer),
+        vehicles: campersReducer,
         favourite: favouritesReducer,
         filters: filtersReducer,
     },

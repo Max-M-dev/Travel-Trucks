@@ -5,7 +5,7 @@ import { toast } from 'react-hot-toast';
 
 axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/";
 
-export const fetchCampers = createAsyncThunk("/campers/fetchAll", async ({ page = 1, limit = 5 }, thunkAPI) => {
+export const fetchCampers = createAsyncThunk("/campers/fetchAll", async ({ page, limit }, thunkAPI) => {
     try {
         const response = await axios.get(`/campers?page=${page}&limit=${limit}`);
         return response.data.items;
