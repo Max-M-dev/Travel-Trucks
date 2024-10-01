@@ -9,18 +9,28 @@ const favouritesSlice = createSlice({
     name: 'favourites',
     initialState: favouriteInitialState,
     reducers: {
-        addFavourite: (state, action) => {
+        // toggleFavourite: (state, action) => {
+        //     const camperId = action.payload;
+
+        //     if (state.favourites.includes(camperId)) {
+        //         state.favourites = state.favourites.filter(id => id !== camperId);
+        //     } else {
+        //         state.favourites.push(camperId);
+        //     }
+        // },
+        toggleFavourite: (state, action) => {
             const camperId = action.payload;
-            if (!state.favourites.includes(camperId)) {
-                state.favourites.push(camperId);
+
+            if (state.favourites[camperId]) {
+                // Якщо кемпер вже в улюблених, видалити його
+                delete state.favourites[camperId];
+            } else {
+                // Додати кемпер до улюблених
+                state.favourites[camperId] = true;
             }
         },
-        removeFavourite: (state, action) => {
-            const camperId = action.payload;
-            state.favourites = state.favourites.filter((id) => id !== camperId);
-        }
     }
-})
+});
 
-export const { addFavourite, removeFavourite } = favouritesSlice.actions;
+export const { toggleFavourite } = favouritesSlice.actions;
 export const favouritesReducer = favouritesSlice.reducer;

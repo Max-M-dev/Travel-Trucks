@@ -81,7 +81,7 @@
 
 .bottom {
     display: flex;
-    padding: 44px 64px 80px;
+    padding: 0 64px 80px;
 }
 
 .image {

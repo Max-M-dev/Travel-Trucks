@@ -4,9 +4,9 @@ import Vehicle from "../Vehicle/Vehicle"
 import { useSelector } from "react-redux";
 import { selectFilteredCampers } from "../../redux/campers/selectors.js";
 
-// import css from './CatalogList.module.css'
+import css from './CatalogList.module.css'
 
-const CatalogList = () => {
+const CatalogList = ({ load }) => {
 
     const campers = useSelector(selectFilteredCampers);
 
@@ -22,6 +22,7 @@ const CatalogList = () => {
                         </li>
                     ))}
                 </ul>)}
+            <button className={css.more} type="button" onClick={load}>Load more</button>
         </div>
     )
 }

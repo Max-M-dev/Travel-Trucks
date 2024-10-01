@@ -33,8 +33,7 @@ const CatalogPage = () => {
             {isLoading && <p>Loading campers...</p>}
             {error && <p>{error}</p>}
             <Filters />
-            <CatalogList />
-            <button className={css.more} type="button" onClick={handleLoadMore}>Load more</button>
+            <CatalogList load={handleLoadMore} />
         </main>
     )
 }

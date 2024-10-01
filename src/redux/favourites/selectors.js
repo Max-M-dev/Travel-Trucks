@@ -1,14 +1,14 @@
 
 import { createSelector } from '@reduxjs/toolkit';
 
-export const selectFavoritesState = (state) => state.favorites;
+export const selectFavoritesState = (state) => state.favourite;
 
 export const selectFavoriteCampers = createSelector(
     selectFavoritesState,
-    (favoritesState) => favoritesState.favorites
+    (favoritesState) => favoritesState.favourites
 );
 
 export const isCamperFavorite = (camperId) => createSelector(
     selectFavoritesState,
-    (favoritesState) => favoritesState.favorites.includes(camperId)
+    (favoritesState) => favoritesState.favourite.includes(camperId)
 );

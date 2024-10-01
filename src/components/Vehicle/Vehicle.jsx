@@ -1,9 +1,27 @@
 
 import css from './Vehicle.module.css';
+import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
 import { equipment } from '../../equipment';
+// import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleFavourite } from '../../redux/favourites/slice';
+import { selectFavoritesState } from '../../redux/favourites/selectors';
 
 const Vehicle = ({ camper }) => {
+
+    const dispatch = useDispatch();
+    const favourites = useSelector(selectFavoritesState);
+
+    const isFavourite = Boolean(favourites.favourites[camper.id]);
+
+    // const [isFavourite, setIsFavourite] = useState(false);
+
+    const handleLike = () => {
+        // setIsFavourite(prevState => !prevState);
+        dispatch(toggleFavourite(camper.id))
+    };
+
     return (
         <div className={css.container}>
             <div className={css.wrapper}>
@@ -14,8 +32,8 @@ const Vehicle = ({ camper }) => {
                             <h2 className={css.title}>{camper.name}</h2>
                             <p className={css.title}>{camper.price.toFixed(2)}</p>
                         </div>
-                        <button className={css.like} type='button'>
-                            <svg className={css.heart} width="26" height="24">
+                        <button className={css.like} type='button' onClick={handleLike}>
+                            <svg className={clsx(css.heart, { [css.favourite]: isFavourite })} width="26" height="24">
                                 <use href="/sprite.svg#icon-heart" >
                                 </use>
                             </svg>
