@@ -52,7 +52,7 @@ const Filters = ({ onSearch }) => {
                             </button>
                         </li>
                         <li className={css.item}>
-                            <button className={css.btn} onClick={() => handleFilterChange("transmission", !transmission)}>
+                            <button className={css.btn} onClick={() => handleFilterChange("transmission", "automatic")}>
                                 <svg width="32" height="32">
                                     <use href="/sprite.svg#icon-diagram" >
                                     </use>
@@ -93,7 +93,7 @@ const Filters = ({ onSearch }) => {
                     <h3 className={css.subtitle}>Vehicle type</h3>
                     <ul className={css.list}>
                         <li className={css.item}>
-                            <button className={css.btn} onClick={() => handleFilterChange("form", "Van")}>
+                            <button className={css.btn} onClick={() => handleFilterChange("form", "panelTruck")}>
                                 <svg width="32" height="32">
                                     <use href="/sprite.svg#icon-grid" >
                                     </use>
@@ -102,7 +102,7 @@ const Filters = ({ onSearch }) => {
                             </button>
                         </li>
                         <li className={css.item}>
-                            <button className={css.btn} onClick={() => handleFilterChange("form", "Fully integrated")}>
+                            <button className={css.btn} onClick={() => handleFilterChange("form", "fullyIntegrated")}>
                                 <svg width="32" height="32">
                                     <use href="/sprite.svg#icon-integration" >
                                     </use>
@@ -111,7 +111,7 @@ const Filters = ({ onSearch }) => {
                             </button>
                         </li>
                         <li className={css.item}>
-                            <button className={css.btn} onClick={() => handleFilterChange("form", "Alcove")}>
+                            <button className={css.btn} onClick={() => handleFilterChange("form", "alcove")}>
                                 <svg width="32" height="32">
                                     <use href="/sprite.svg#icon-vector" >
                                     </use>
