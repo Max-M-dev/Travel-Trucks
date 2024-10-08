@@ -26,7 +26,7 @@ export const selectFilteredCampers = createSelector(
 
         return campers.filter(camper => {
             const matchesName = typeof camper.name === 'string' && camper.name.toLowerCase().includes(nameFilter.toLowerCase());
-            const matchesLocation = typeof camper.location === 'string' && camper.location.includes(locationFilter.toLowerCase());
+            const matchesLocation = typeof camper.location === 'string' && camper.location.toLowerCase().includes(locationFilter.toLowerCase());
             const matchesForm = typeof camper.form === 'string' && camper.form.includes(formFilter.toLowerCase());
             const matchesAC = typeof camper.AC === "boolean" ? camper.AC === acFilter : true;
             const matchesTransmission = typeof camper.transmission === 'string' && camper.transmission.includes(transmissionFilter.toLowerCase());

@@ -3,22 +3,20 @@ import css from './Vehicle.module.css';
 import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
 import { equipment } from '../../equipment';
-// import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavourite } from '../../redux/favourites/slice';
 import { selectFavoritesState } from '../../redux/favourites/selectors';
 
 const Vehicle = ({ camper }) => {
 
+    // console.log(camper);
+
     const dispatch = useDispatch();
     const favourites = useSelector(selectFavoritesState);
 
     const isFavourite = Boolean(favourites.favourites[camper.id]);
 
-    // const [isFavourite, setIsFavourite] = useState(false);
-
     const handleLike = () => {
-        // setIsFavourite(prevState => !prevState);
         dispatch(toggleFavourite(camper.id))
     };
 

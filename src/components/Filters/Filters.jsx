@@ -1,7 +1,28 @@
 
 import css from './Filters.module.css'
 
-const Filters = () => {
+import { useDispatch, useSelector } from 'react-redux';
+import { selectACFilter, selectTransmissionFilter, selectKitchenFilter, selectTVFilter, selectBathroomFilter } from '../../redux/filters/selectors.js';
+import { changeFilter } from '../../redux/filters/slice';
+
+const Filters = ({ onSearch }) => {
+
+    const dispatch = useDispatch();
+
+    const transmission = useSelector(selectTransmissionFilter);
+    const kitchen = useSelector(selectKitchenFilter);
+    const tv = useSelector(selectTVFilter);
+    const bath = useSelector(selectBathroomFilter);
+    const ac = useSelector(selectACFilter);
+
+    const handleFilterChange = (filter, value) => {
+        dispatch(changeFilter({ filter, value }));
+    };
+
+    const performSearch = () => {
+        onSearch();
+    };
+
     return (
         <div className={css.container}>
             <div className={css.location}>
@@ -9,9 +30,8 @@ const Filters = () => {
                 <input
                     type="text"
                     className={css.input}
-                // value={filter}
-                // onChange={(e) => dispatch(changeFilter(e.target.value))}
-                />
+                    // value={filter}
+                    onChange={(e) => handleFilterChange("location", e.target.value)} />
                 <svg className={css.map} width="20" height="20">
                     <use href="/sprite.svg#icon-map" >
                     </use>
@@ -23,7 +43,7 @@ const Filters = () => {
                     <h3 className={css.subtitle}>Vehicle equipment</h3>
                     <ul className={css.list}>
                         <li className={css.item}>
-                            <button className={css.btn}>
+                            <button className={css.btn} onClick={() => handleFilterChange("AC", !ac)}>
                                 <svg width="32" height="32">
                                     <use href="/sprite.svg#icon-wind" >
                                     </use>
@@ -32,7 +52,7 @@ const Filters = () => {
                             </button>
                         </li>
                         <li className={css.item}>
-                            <button className={css.btn}>
+                            <button className={css.btn} onClick={() => handleFilterChange("transmission", !transmission)}>
                                 <svg width="32" height="32">
                                     <use href="/sprite.svg#icon-diagram" >
                                     </use>
@@ -41,7 +61,7 @@ const Filters = () => {
                             </button>
                         </li>
                         <li className={css.item}>
-                            <button className={css.btn}>
+                            <button className={css.btn} onClick={() => handleFilterChange("kitchen", !kitchen)}>
                                 <svg width="32" height="32">
                                     <use href="/sprite.svg#icon-cup" >
                                     </use>
@@ -50,7 +70,7 @@ const Filters = () => {
                             </button>
                         </li>
                         <li className={css.item}>
-                            <button className={css.btn}>
+                            <button className={css.btn} onClick={() => handleFilterChange("TV", !tv)}>
                                 <svg width="32" height="32">
                                     <use href="/sprite.svg#icon-tv" >
                                     </use>
@@ -59,7 +79,7 @@ const Filters = () => {
                             </button>
                         </li>
                         <li className={css.item}>
-                            <button className={css.btn}>
+                            <button className={css.btn} onClick={() => handleFilterChange("bathroom", !bath)}>
                                 <svg width="32" height="32">
                                     <use href="/sprite.svg#icon-bath" >
                                     </use>
@@ -73,7 +93,7 @@ const Filters = () => {
                     <h3 className={css.subtitle}>Vehicle type</h3>
                     <ul className={css.list}>
                         <li className={css.item}>
-                            <button className={css.btn}>
+                            <button className={css.btn} onClick={() => handleFilterChange("form", "Van")}>
                                 <svg width="32" height="32">
                                     <use href="/sprite.svg#icon-grid" >
                                     </use>
@@ -82,7 +102,7 @@ const Filters = () => {
                             </button>
                         </li>
                         <li className={css.item}>
-                            <button className={css.btn}>
+                            <button className={css.btn} onClick={() => handleFilterChange("form", "Fully integrated")}>
                                 <svg width="32" height="32">
                                     <use href="/sprite.svg#icon-integration" >
                                     </use>
@@ -91,7 +111,7 @@ const Filters = () => {
                             </button>
                         </li>
                         <li className={css.item}>
-                            <button className={css.btn}>
+                            <button className={css.btn} onClick={() => handleFilterChange("form", "Alcove")}>
                                 <svg width="32" height="32">
                                     <use href="/sprite.svg#icon-vector" >
                                     </use>
@@ -102,7 +122,7 @@ const Filters = () => {
                     </ul>
                 </div>
             </div>
-            <button type="button" className={css.search}>Search</button>
+            <button type="button" className={css.search} onClick={performSearch}>Search</button>
         </div>
     )
 }
