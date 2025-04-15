@@ -10,13 +10,14 @@ import {
 import css from './CatalogList.module.css';
 
 const CatalogList = ({ load, isLoading, whereToShowLoader, error }) => {
-  if (error) {
-    return <p>{error}</p>;
-  }
   const campers = useSelector(selectFilteredCampers);
   const serverTotalItems = useSelector(selectCampersServerTotalItems);
 
   const isShowBtnMore = () => serverTotalItems > campers.length;
+  if (error) {
+    return <p>{error}</p>;
+  }
+  console.log(whereToShowLoader);
 
   return (
     <div className={css.content}>
@@ -45,7 +46,7 @@ const CatalogList = ({ load, isLoading, whereToShowLoader, error }) => {
       )}
       {isShowBtnMore() && (
         <button className={css.more} type="button" onClick={load}>
-          {isLoading && whereToShowLoader === 'moreLoad' ? (
+          {isLoading && whereToShowLoader === 'loadMore' ? (
             <Loader size="30px" />
           ) : (
             'Load more'

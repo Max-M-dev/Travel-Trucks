@@ -8,7 +8,7 @@ import {
 const campersInitialState = {
   items: [],
   serverTotalItems: null,
-  loading: false,
+  isLoading: false,
   error: null,
   page: 1,
   limit: 5,
