@@ -17,6 +17,7 @@ export const selectCamperById = (state, id) => {
 };
 
 export const selectError = state => state.vehicles.error;
+export const selectIsLoading = state => state.vehicles.isLoading;
 
 export const selectFilteredCampers = createSelector(
   [
