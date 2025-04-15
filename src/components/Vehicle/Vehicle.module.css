@@ -1,134 +1,133 @@
-
 .container {
-    display: flex;
-    border: 1px solid #dadde1;
-    border-radius: 20px;
-    padding: 24px;
-    width: 888px;
-    background: #fff;
-    margin-bottom: 32px;
+  display: flex;
+  border: 1px solid #dadde1;
+  border-radius: 20px;
+  padding: 24px;
+  width: 888px;
+  background: #fff;
+  margin-bottom: 32px;
+  position: relative;
 }
 
 .wrapper {
-    display: flex;
+  display: flex;
 }
 
 .box {
-    height: 320px;
+  height: 320px;
 }
 
 .div {
-    display: flex;
-    height: 32px;
-    margin-bottom: 8px;
+  display: flex;
+  height: 32px;
+  margin-bottom: 8px;
 }
 
 .img {
-    border-radius: 10px;
-    width: 292px;
-    height: 320px;
-    margin-right: 24px;
-    object-fit: cover;
-    object-position: center;
+  border-radius: 10px;
+  width: 292px;
+  height: 320px;
+  margin-right: 24px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .top {
-    display: flex;
-    justify-content: space-between;
-    width: 486px;
-    margin-right: 12px;
+  display: flex;
+  justify-content: space-between;
+  width: 486px;
+  margin-right: 12px;
 }
 
 .like {
-    background-color: transparent;
-    border: none;
-    justify-content: center;
-    align-items: center;
+  background-color: transparent;
+  border: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .heart {
-    stroke: #101828;
+  stroke: #101828;
 }
 
 .favourite {
-    stroke: #E44848;
+  stroke: #e44848;
 }
 
 .title {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.33;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
 }
 
 .middle {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 24px;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .paragraph {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 .star {
-    fill: #ffc531;
+  fill: #ffc531;
 }
 
 .text {
-    color: #475467;
-    width: 524px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-bottom: 24px;
+  color: #475467;
+  width: 524px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 24px;
 }
 
 .bottom {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    width: 400px;
-    margin-bottom: 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 400px;
+  margin-bottom: 24px;
 }
 
 .list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    height: 104px;
-    overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  height: 104px;
+  overflow: hidden;
 }
 
 .item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 8px;
-    border-radius: 100px;
-    padding: 12px 18px;
-    height: 48px;
-    background: #f2f4f7;
-    mix-blend-mode: multiply;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  border-radius: 100px;
+  padding: 12px 18px;
+  height: 48px;
+  background: #f2f4f7;
+  mix-blend-mode: multiply;
 
-    font-weight: 500;
-    text-align: center;
-    text-transform: capitalize;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
 }
 
 .btn {
-    display: flex;
-    justify-content: center;
-    border-radius: 200px;
-    padding: 16px 40px;
-    width: 166px;
-    background: #e44848;
+  display: flex;
+  justify-content: center;
+  border-radius: 200px;
+  padding: 16px 40px;
+  width: 166px;
+  background: #e44848;
 
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    color: #fff;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #fff;
 }
-

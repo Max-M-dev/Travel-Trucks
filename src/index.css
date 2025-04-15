@@ -3,13 +3,17 @@
   line-height: 1.5;
   font-weight: 400;
   font-size: 16px;
-  color: #101828;;
-  background-color: #fff;;
+  color: #101828;
+  background-color: #fff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --red-light: #e44848;
+  --red-middle: #d84343;
+  --grey-light: #dadde1;
+  --grey-dark: #6c717b;
 }
 
 *,
